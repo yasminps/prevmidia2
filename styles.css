@@ -432,8 +432,8 @@ h3 {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .showcase-card {
@@ -457,7 +457,7 @@ h3 {
 }
 
 .showcase-cover {
-  aspect-ratio: 1122 / 1294;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--bg-elev-2);
 }
@@ -487,6 +487,26 @@ h3 {
 .showcase-cover-empty .icon {
   font-size: 28px;
   color: var(--text-faint);
+}
+
+.showcase-cover-bundle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--bg);
+}
+
+.showcase-card-featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(205, 163, 90, 0.4), 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+.price-was {
+  color: var(--text-faint);
+  font-weight: 500;
+  font-size: 0.85em;
+  text-decoration: line-through;
+  margin-right: 2px;
 }
 
 .showcase-body {
@@ -524,11 +544,18 @@ h3 {
   font-size: 1.05rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
   .showcase-grid {
     grid-template-columns: 1fr;
     max-width: 420px;
-    margin: 0 auto;
   }
 }
 
@@ -719,8 +746,8 @@ blockquote {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   align-items: stretch;
 }
 
@@ -730,7 +757,7 @@ blockquote {
   border-radius: var(--radius-card);
   border: 1px solid var(--border-strong);
   background: linear-gradient(180deg, var(--bg-elev-2), var(--bg-elev));
-  padding: 36px;
+  padding: 28px;
   box-shadow: var(--shadow-gold);
   scroll-margin-top: 88px;
   transition: box-shadow 0.4s ease, border-color 0.4s ease;
@@ -739,6 +766,11 @@ blockquote {
 .pricing-card:target {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(205, 163, 90, 0.35), var(--shadow-gold);
+}
+
+.pricing-card-featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(205, 163, 90, 0.4), var(--shadow-gold);
 }
 
 .pricing-card h3 {
@@ -755,7 +787,7 @@ blockquote {
 }
 
 .pricing-card .price {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--gold-100);
 }
@@ -808,11 +840,18 @@ blockquote {
   color: var(--gold);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 480px;
-    margin: 0 auto;
   }
 }
 
