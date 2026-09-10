@@ -359,11 +359,9 @@ h3 {
 }
 
 .hero-price-tag {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
   color: var(--text-faint);
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .hero-price-tag strong {
@@ -562,8 +560,34 @@ h3 {
 
 @media (max-width: 560px) {
   .showcase-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .showcase-body {
+    padding: 12px 12px 14px;
+    gap: 8px;
+  }
+
+  .showcase-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .showcase-info h3 {
+    font-size: 0.88rem;
+  }
+
+  .showcase-price {
+    font-size: 0.92rem;
+  }
+
+  .showcase-body .btn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
   }
 }
 
