@@ -430,8 +430,8 @@ h3 {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .showcase-card {
@@ -488,16 +488,116 @@ h3 {
   color: var(--text-faint);
 }
 
-.showcase-cover-bundle {
+.card-badge {
+  display: inline-block;
+  padding: 7px 16px;
+  background: linear-gradient(135deg, var(--gold-100), var(--gold) 55%, var(--gold-600));
+  color: var(--gold-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Bundle banner (Pacote Completo, destacado isoladamente) ---------- */
+
+.bundle-banner {
+  display: flex;
+  align-items: stretch;
+  margin-top: 32px;
+  scroll-margin-top: 88px;
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--gold);
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(205, 163, 90, 0.2), var(--bg-elev-2) 48%, var(--bg-elev));
+  box-shadow: 0 0 0 1.5px rgba(205, 163, 90, 0.45), 0 50px 100px -30px rgba(205, 163, 90, 0.35), 0 40px 80px -40px rgba(0, 0, 0, 0.6);
+}
+
+.bundle-banner-cover {
+  flex: 0 0 36%;
+  max-width: 440px;
+  min-height: 320px;
+}
+
+.bundle-banner-mosaic {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 2px;
+  width: 100%;
+  height: 100%;
   background: var(--bg);
 }
 
-.showcase-card-featured {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1px rgba(205, 163, 90, 0.4), 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+.bundle-banner-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bundle-banner-body {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.bundle-banner-body h3 {
+  font-size: clamp(1.4rem, 1rem + 1.4vw, 1.8rem);
+  color: var(--text);
+}
+
+.bundle-banner-body > p {
+  color: var(--text-muted);
+  max-width: 48ch;
+  margin: 0;
+}
+
+.bundle-banner-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bundle-banner-price .price {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--gold-100);
+}
+
+.bundle-banner-price .price-was {
+  font-size: 1.1rem;
+}
+
+.bundle-banner-price-note {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+.bundle-banner .price-features {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .bundle-banner {
+    flex-direction: column;
+  }
+
+  .bundle-banner-cover {
+    flex: none;
+    max-width: none;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+  }
+
+  .bundle-banner-body {
+    padding: 28px 24px;
+  }
 }
 
 .price-was {
@@ -542,12 +642,6 @@ h3 {
   color: var(--gold-100);
   font-weight: 700;
   font-size: 1.05rem;
-}
-
-@media (max-width: 1400px) {
-  .showcase-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @media (max-width: 900px) {
@@ -778,8 +872,8 @@ blockquote {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -790,7 +884,7 @@ blockquote {
   border-radius: var(--radius-card);
   border: 1px solid var(--border-strong);
   background: linear-gradient(180deg, var(--bg-elev-2), var(--bg-elev));
-  padding: 22px;
+  padding: 28px;
   box-shadow: var(--shadow-gold);
   scroll-margin-top: 88px;
   transition: box-shadow 0.4s ease, border-color 0.4s ease;
@@ -801,15 +895,10 @@ blockquote {
   box-shadow: 0 0 0 3px rgba(205, 163, 90, 0.35), var(--shadow-gold);
 }
 
-.pricing-card-featured {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1px rgba(205, 163, 90, 0.4), var(--shadow-gold);
-}
-
 .pricing-card h3 {
-  font-size: 1.02rem;
+  font-size: 1.1rem;
   color: var(--text);
-  min-height: 3.2em;
+  min-height: 2.9em;
 }
 
 .pricing-card .price-row {
@@ -820,7 +909,7 @@ blockquote {
 }
 
 .pricing-card .price {
-  font-size: 1.9rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--gold-100);
 }
@@ -871,12 +960,6 @@ blockquote {
 
 .pricing-guarantee .icon {
   color: var(--gold);
-}
-
-@media (max-width: 1400px) {
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @media (max-width: 900px) {
