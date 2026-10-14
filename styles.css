@@ -505,7 +505,7 @@ h3 {
 .bundle-banner {
   display: flex;
   align-items: stretch;
-  margin-top: 32px;
+  margin-bottom: 32px;
   scroll-margin-top: 88px;
   border-radius: var(--radius-card);
   border: 1.5px solid var(--gold);
