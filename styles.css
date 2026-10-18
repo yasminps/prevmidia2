@@ -1,4 +1,4 @@
-/* PrevMídia - landing page styles
+/* Aurora - landing page styles
    Deliberately dark-only: mirrors the brand's existing logo and cover art. */
 
 @font-face {
@@ -208,8 +208,9 @@ a {
 }
 
 .brand img {
-  height: 34px;
-  width: auto;
+  height: 70px;
+  width: 150px;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -1062,8 +1063,9 @@ footer {
 }
 
 .footer-brand img {
-  height: 30px;
-  width: auto;
+  height: 70px;
+  width: 150px;
+  object-fit: cover;
 }
 
 .footer-brand p {
@@ -1162,3 +1164,4 @@ footer {
     transition: none;
   }
 }
+
